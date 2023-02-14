@@ -1,6 +1,9 @@
 ﻿//Первоначальный (Входной) массив
 String[] arrayString = { "Hello", ":-)", "2", "world"};
 
+//Вариант второй входного массива
+//String[] arrayString = { "1234", "1567", "-2", "computer science"};
+
 // Определение размерности выходного массива
 int SizeArray(string[] array)
 {
@@ -43,10 +46,18 @@ String[] NewArrayString(int sizeArray, string[] arrayString)
 
 int sizeArray = SizeArray(arrayString);
 
-//Печать нового массива
-
-Console.Write("[");
 String[] arr = NewArrayString(sizeArray, arrayString);
+
+//Вывод массива в консоль
+
+ShowConsole(arr);
+void ShowConsole( string[] arr)
+{
+Console.Write("[");
 for (int i = 0; i < arr.Length; i++)
-    Console.Write("\"{0}\", ", arr[i]);
+{
+    Console.Write("\"{0}\"", arr[i]);
+   if( i != arr.Length - 1) Console.Write(",");
+}
 Console.Write("]");
+}
